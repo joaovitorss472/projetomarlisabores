@@ -8,18 +8,17 @@ import '../styles/footer.css'
 import Logo from "../assets/marlisaboreslogo.svg"
 import { useState } from 'react'
 import Button from '../components/Button.tsx'
-import RectangleOne from "../assets/images/RectangleOne.png"
-import RectangleTwo from "../assets/images/RectangleTwo.png"
+import cucas from "../assets/images/cucas.jpg"
+import paes from "../assets/images/paes.jpg"
+import bolos from "../assets/images/bolos.jpg"
 import Menu from "../assets/menu.svg"
 import Close from "../assets/close.svg"
-import Check from "../assets/check.svg"
 import Card from '../components/Cards.tsx'
 import CarouselCard from '../components/CarouselCard.tsx'
 import ProfileImageOne from "../assets/images/perfilum.webp"
 import ProfileImageTwo from "../assets/images/perfildois.webp"
 import ProfileImageTree from "../assets/images/perfiltres.webp"
 import RedesSociais from "../assets/redessociais.svg"
-
 
 export default function Home() {
 
@@ -32,21 +31,11 @@ export default function Home() {
                     <img src={Logo} alt="Logo Marli Sabores" width={200} height={120} />
                     <div className="desktop-only">
                         <ul className="flex gap-1">
-                            <li>
-                                <a href="#">Home</a>
-                            </li>
-                            <li>
-                                <a href="#solution">Soluções</a>
-                            </li>
-                            <li>
-                                <a href="#testimonials">Depoimentos</a>
-                            </li>
-                            <li>
-                                <a href="#pricing">Preços</a>
-                            </li>
-                            <li>
-                                <a href="#contact">Contato</a>
-                            </li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#solution">Soluções</a></li>
+                            <li><a href="#testimonials">Depoimentos</a></li>
+                            <li><a href="#pricing">Produtos</a></li>
+                            <li><a href="#contact">Contato</a></li>
                         </ul>
                     </div>
 
@@ -61,21 +50,11 @@ export default function Home() {
                             <div className="mobile-menu-content">
                                 <div className="container flex">
                                     <ul>
-                                        <li>
-                                            <a href="#">Home</a>
-                                        </li>
-                                        <li>
-                                            <a href="#solution">Soluções</a>
-                                        </li>
-                                        <li>
-                                            <a href="#testimonials">Depoimentos</a>
-                                        </li>
-                                        <li>
-                                            <a href="#pricing">Preços</a>
-                                        </li>
-                                        <li>
-                                            <a href="#contact">Contato</a>
-                                        </li>
+                                        <li><a href="#">Home</a></li>
+                                        <li><a href="#solution">Soluções</a></li>
+                                        <li><a href="#testimonials">Depoimentos</a></li>
+                                        <li><a href="#pricing">Produtos</a></li>
+                                        <li><a href="#contact">Contato</a></li>
                                     </ul>
                                     <span onClick={() => setShowMobileMenu(!showMobileMenu)} className="btn-wrapper">
                                         <img src={Close} alt="ícone fechar menu" width={24} height={24} />
@@ -88,33 +67,21 @@ export default function Home() {
                             </span>
                         }
                     </div>
-
                 </nav>
             </header>
+            
             <section id="hero">
-
-                <span className='desktop-only' >
-                    <img src={RectangleTwo} alt="Imagem retângulo dois" />
-
-                </span>
-                <img src={RectangleOne} alt="Imagem retângulo um" />
-
                 <div className="container content">
-                    <p className="desktop-only">
-                        Olá
-                    </p>
+                    <p className="desktop-only">Olá</p>
                     <h1>Comida de mãe direto no seu apê, é só pedir que entregamos para você!</h1>
-                    <p>Já pensou em matar a saudade daquela comida caseira? O melhor de tudo, nossas receitas são 100% saudáveis.
-                    </p>
+                    <p>Já pensou em matar a saudade daquela comida caseira? O melhor de tudo, nossas receitas são 100% saudáveis.</p>
                     <div className="flex gap-1">
                         <span><Button text="Cadastre-se" /></span>
                         <span className="desktop-only">
                             <Button text="Veja mais" secondary />
-
                         </span>
                     </div>
                 </div>
-
             </section>
 
             <section id='solution' className='container'>
@@ -128,172 +95,82 @@ export default function Home() {
                         </span>
                     </span>
                     <p>
-                        Oferecemos uma variedade de opções de refeições caseiras,
-                        preparadas com ingredientes frescos e saudáveis,
-                        entregues diretamente na sua porta.
-                        <strong>MarliSabores</strong>
+                        Oferecemos uma variedade de opções de refeições caseiras, preparadas com ingredientes frescos e saudáveis, entregues diretamente na sua porta. <strong>MarliSabores</strong>
                     </p>
                 </header>
                 <section className="even-columns">
-                    <Card titulo='Ingredientes Selecionados' paragrafo='Nada de massa industrializada. Aqui usamos frutas frescas, farinha de qualidade e aquele toque caseiro que você ama.' />
-                    <Card titulo='Pedido fácil e Rápido' paragrafo='Vendas sob encomenda e entregas sem cobrança de frete' />
-                    <Card titulo='Sabor com Preço Justo' paragrafo='O sabor caseiro autêntico das receitas de família,com preço justo.' />
-
+                    <Card imagem={Menu} titulo='Ingredientes Selecionados' paragrafo='Nada de massa industrializada. Aqui usamos frutas frescas, farinha de qualidade e aquele toque caseiro que você ama.' />
+                    <Card imagem={Menu} titulo='Pedido fácil e Rápido' paragrafo='Vendas sob encomenda e entregas sem cobrança de frete' />
+                    <Card imagem={Menu} titulo='Sabor com Preço Justo' paragrafo='O sabor caseiro autêntico das receitas de família, com preço justo.' />
                 </section>
-
             </section>
 
             <section id="testimonials">
                 <header>
                     <span>
-                        <p className="desktop-only">
-                            Conselho de quem conhece
-                        </p>
+                        <p className="desktop-only">Conselho de quem conhece</p>
                         <h2>Cada cliente importa!</h2>
                     </span>
-                    <p>
-                        Quem já pediu sabe da qualidade das nossas receitas, acompanhe abaixo os testemunhos de quem já comprou e aprovou.
-                    </p>
+                    <p>Quem já pediu sabe da qualidade das nossas receitas, acompanhe abaixo os testemunhos de quem já comprou e aprovou.</p>
                 </header>
 
                 <section className="carousel">
                     <div className="carousel-content">
-                        <CarouselCard
-                            name='Lázaro Ramos'
-                            title='Ator'
-                            testimonial='A cuca de doce de leite com coco é uma delicia, é perfeita para um café da tarde de domingo.'
-                            rating={5}
-                            profileImage={ProfileImageOne}
-                        />
-
-                        <CarouselCard
-                            name='Lionel Messi'
-                            title='Jogador de Futebol'
-                            testimonial='Encomendei uma cuca de abacaxi com coco, é simplismente dos deuses!'
-                            rating={5}
-                            profileImage={ProfileImageTwo}
-                        />
-
-                        <CarouselCard
-                            name='Cristiano Ronaldo'
-                            title='Jogador de Futebol'
-                            testimonial='A Cuca é muito boa, macia e saborosa. A dona Marli tem o dom, até os mais exigentes aprovaram. É a melhor!!! SIIIIUUUU!!!!!!!'
-                            rating={5}
-                            profileImage={ProfileImageTree}
-                        />
+                        <CarouselCard name='Lázaro Ramos' title='Ator' testimonial='A cuca de doce de leite com coco é uma delícia, é perfeita para um café da tarde de domingo.' rating={5} profileImage={ProfileImageOne} />
+                        <CarouselCard name='Lionel Messi' title='Jogador de Futebol' testimonial='Encomendei uma cuca de abacaxi com coco, é simplesmente dos deuses!' rating={5} profileImage={ProfileImageTwo} />
+                        <CarouselCard name='Cristiano Ronaldo' title='Jogador de Futebol' testimonial='A Cuca é muito boa, macia e saborosa. A dona Marli tem o dom, até os mais exigentes aprovaram. É a melhor!!! SIIIIUUUU!!!!!!!' rating={5} profileImage={ProfileImageTree} />
                     </div>
 
                     <div className="carousel-content">
-                        <CarouselCard
-                            name='Lázaro Ramos'
-                            title='Ator'
-                            testimonial='A cuca de doce de leite com coco é uma delicia, é perfeita para um café da tarde de domingo.'
-                            rating={5}
-                            profileImage={ProfileImageOne}
-                        />
-
-                        <CarouselCard
-                            name='Lionel Messi'
-                            title='Jogador de Futebol'
-                            testimonial='Encomendei uma cuca de abacaxi com coco, é simplismente dos deuses!'
-                            rating={5}
-                            profileImage={ProfileImageTwo}
-                        />
-
-                        <CarouselCard
-                            name='Cristiano Ronaldo'
-                            title='Jogador de Futebol'
-                            testimonial='A Cuca é muito boa, macia e saborosa. é sensacional! SIIIIUUUU!!!!!!!'
-                            rating={5}
-                            profileImage={ProfileImageTree}
-                        />
+                        <CarouselCard name='Lázaro Ramos' title='Ator' testimonial='A cuca de doce de leite com coco é uma delícia, é perfeita para um café da tarde de domingo.' rating={5} profileImage={ProfileImageOne} />
+                        <CarouselCard name='Lionel Messi' title='Jogador de Futebol' testimonial='Encomendei uma cuca de abacaxi com coco, é simplesmente dos deuses!' rating={5} profileImage={ProfileImageTwo} />
+                        <CarouselCard name='Cristiano Ronaldo' title='Jogador de Futebol' testimonial='A Cuca é muito boa, macia e saborosa. É sensacional! SIIIIUUUU!!!!!!!' rating={5} profileImage={ProfileImageTree} />
                     </div>
-
                 </section>
-
             </section>
 
             <section id="pricing" className="container">
                 <header>
-                    <p className="desktop-only">Planos e preços</p>
-                    <h2>Nossos planos</h2>
+                    <p className="desktop-only">Conheça nossos produtos</p>
+                    <h2>Nosso Cardápio</h2>
                 </header>
 
-                <section className="even-columns gap-1.5">
-                    <div className="pricing-card">
-                        <span className="plan">
-                            <h3>Tradicionais</h3>
-                            <p>Sabores clássicos que todo mundo ama. Aquele gostinho de infância.</p>
-                        </span>
-                        <h2>R$ 12,00</h2>
-                        <Button text="Pedir agora" secondary key="free" />
-                        <span className="hr" /><span className="features">
-                            <img src={Check} alt="ícone check" width={24} height={24} />
-                            <p>Encomendar</p>
-                        </span>
-                        <ul className="features">
-                            <li>
-                                <img src={Check} alt="ícone check" width={24} height={24} />
-                                <p>Goiabada</p>
-                            </li>
-                        </ul>
+                <section className="menu-gallery-row">
+                    
+                    <div className="menu-card">
+                        <img src={cucas} alt="Cardápio de Cucas" />
+                        <div className="btn-wrapper-center">
+                            <Button text="Pedir agora" />
+                        </div>
                     </div>
 
-                    <div className="pricing-card premium">
-                        <span className="bonus">
-                            <p>Doce de Leite</p>
-                        </span>
-                        <span className="plan">
-                            <h3>Pães</h3>
-                            <p>Pão branco
-                                pão de fubá
-                                pão integral</p>
-                        </span>
-                        <span className="price">
-                            <h2>R$ 10,00</h2>
-                            <p>/mês</p>
-                        </span>
-                        <Button text="Pedir agora" key="premium" />
-                        <span className="hr" />
-                        <span className="features">
-                            <img src={Check} alt="ícone check" width={24} height={24} />
-                            <p>Entregas</p>
-                        </span>
-                        <span className="features">
-                            <img src={Check} alt="ícone check" width={24} height={24} />
-                            <p>Bolos</p>
-                        </span>
-                        <span className="features">
-                            <img src={Check} alt="ícone check" width={24} height={24} />
-                            <p>Chocolate com Morango
-                                4 leites
-                                Frutas
-                                Bombom
-                            </p>
-                        </span>
+                    <div className="menu-card">
+                        <img src={paes} alt="Cardápio de Pães" />
+                        <div className="btn-wrapper-center">
+                            <Button text="Pedir agora" />
+                        </div>
                     </div>
+
+                    <div className="menu-card">
+                        <img src={bolos} alt="Cardápio de Bolos" />
+                        <div className="btn-wrapper-center">
+                            <Button text="Pedir agora" />
+                        </div>
+                    </div>
+
                 </section>
             </section>
+
             <section id="contact" className="container">
                 <header>
                     <p>Envie sua dúvida</p>
                     <h2>Entre em contato</h2>
-                    <p>
-                        Entre em contato, estamos dispostos a tirar qualquer dúvida,
-                        seja sobre o seu pedido.
-                        Estamos à disposição para responder!
-                    </p>
+                    <p>Entre em contato, estamos dispostos a tirar qualquer dúvida, seja sobre o seu pedido. Estamos à disposição para responder!</p>
                 </header>
 
                 <form>
-                    <input
-                        type="email"
-                        placeholder="Seu melhor Email"
-                    />
-                    <textarea
-                        placeholder="Motivo do contato. Ex: Poderia fazer alguma encomenda especifica?"
-                    />
-
+                    <input type="email" placeholder="Seu melhor Email" />
+                    <textarea placeholder="Motivo do contato. Ex: Poderia fazer alguma encomenda especifica?" />
                     <div className="btn-wrapper">
                         <Button text="Enviar" />
                     </div>
@@ -302,12 +179,10 @@ export default function Home() {
 
             <footer id="footer">
                 <div className="container footer-content">
-
                     <div className="logo-column">
                         <img src={Logo} alt="Logo" width={280} height={120} />
                         <div className="social-links">
                             <a href="#"><img src={RedesSociais} alt="Redes Sociais" height={24} /></a>
-
                         </div>
                     </div>
 
@@ -341,7 +216,7 @@ export default function Home() {
                 </div>
 
                 <div className="footer-bar">
-                    <p>Feito para resgatar aquela lembrança da infância  ©2025</p>
+                    <p>Feito para resgatar aquela lembrança da infância ©2025</p>
                 </div>
             </footer>
         </>
