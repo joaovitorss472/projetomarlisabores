@@ -1,4 +1,4 @@
-mport '../styles/Header.css'
+import '../styles/Header.css'
 import '../styles/hero.css'
 import '../styles/solution.css'
 import '../styles/testimonials.css'
