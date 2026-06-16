@@ -139,26 +139,20 @@ export default function Home() {
                     
                     <div className="menu-card">
                         <img src={cucas} alt="Cardápio de Cucas" />
-                        <div className="btn-wrapper-center">
-                            <Button text="Pedir agora" />
-                        </div>
                     </div>
 
                     <div className="menu-card">
                         <img src={paes} alt="Cardápio de Pães" />
-                        <div className="btn-wrapper-center">
-                            <Button text="Pedir agora" />
                         </div>
-                    </div>
+                    
 
                     <div className="menu-card">
                         <img src={bolos} alt="Cardápio de Bolos" />
-                        <div className="btn-wrapper-center">
+                    </div>
+                </section>
+                <div className="btn-wrapper">
                             <Button text="Pedir agora" />
                         </div>
-                    </div>
-
-                </section>
             </section>
 
             <section id="contact" className="container">
