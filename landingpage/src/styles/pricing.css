@@ -1,0 +1,72 @@
+#pricing {
+  text-align: center;
+}
+
+#pricing header p {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  
+}
+
+#pricing header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Container principal responsivo */
+.menu-gallery-row {
+  display: flex;
+  flex-direction: column; /* Mobile First: Empilha os cards no celular */
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Quando a tela for grande (Desktop), coloca lado a lado */
+@media (min-width: 1024px) {
+  .menu-gallery-row {
+    flex-direction: row; 
+    justify-content: center;
+    align-items: stretch; /* Faz os cards terem a mesma altura */
+  }
+}
+
+/* Base de estilo para cada card */
+.menu-card {
+  flex: 1;
+  width: 100%;
+  max-width: 450px; /* Evita que o card fique gigante no mobile */
+  display: flex;
+  flex-direction: column; 
+  background-color: #ffffff; /* Fundo branco do card */
+  padding: 0.5rem; 
+  border-radius: 32px;
+  border: 1px solid #eaeaea; /* Bordinha bem suave */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04); /* Sombra elegante */
+  transition: transform 0.3s ease; /* Efeito suave ao passar o mouse */
+  position: relative;
+}
+
+/* Efeito Hover: levanta o card quando o mouse passa por cima */
+.menu-card:hover {
+  transform: translateY(-5px) scale(1.10);
+  z-index: 10; 
+}
+
+/* Estilo da imagem do panfleto */
+.menu-card img {
+  width: 100%; 
+  height: auto; 
+  object-fit: contain; 
+  border-radius: 24px; 
+  margin-bottom: 1.5rem; 
+}
+
+/* Container do botão*/
+
+.btn-wrapper {
+  width: 100%;
+  max-width: 400px;    /* Limita o tamanho do container ao tamanho de um card */
+  margin: 3rem auto 0; /* O 'auto' nas laterais centraliza o container na tela perfeitamente */
+}
