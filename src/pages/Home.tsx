@@ -6,15 +6,16 @@ import '../styles/pricing.css'
 import '../styles/contact.css'
 import '../styles/footer.css'
 import Logo from "../assets/marlisaboreslogo.svg"
-import { useState } from 'react'
-import Button from '../components/Button.tsx'
+import React, { useState } from 'react'
+import Button from '../components/Button'
 import cucas from "../assets/images/cucas.jpg"
 import paes from "../assets/images/paes.jpg"
 import bolos from "../assets/images/bolos.jpg"
+import { MenuModal } from '../components/Modal' // <-- Importação corrigida com chaves e sem .tsx!
 import Menu from "../assets/menu.svg"
 import Close from "../assets/close.svg"
-import Card from '../components/Cards.tsx'
-import CarouselCard from '../components/CarouselCard.tsx'
+import Card from '../components/Cards'
+import CarouselCard from '../components/CarouselCard'
 import ProfileImageOne from "../assets/images/perfilum.webp"
 import ProfileImageTwo from "../assets/images/perfildois.webp"
 import ProfileImageTree from "../assets/images/perfiltres.webp"
@@ -22,7 +23,33 @@ import RedesSociais from "../assets/redessociais.svg"
 
 export default function Home() {
 
-    const [showMobileMenu, setShowMobileMenu] = useState(false); 
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+    // --- ESTADOS E LÓGICA DO MODAL ---
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
+
+    // Array de imagens
+    const menuImages = [cucas, paes, bolos];
+
+    const openModal = (index: number) => {
+        setCurrentImageIndex(index);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
+    const handleNext = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        setCurrentImageIndex((prev) => (prev === menuImages.length - 1 ? 0 : prev + 1));
+    };
+
+    const handlePrev = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        setCurrentImageIndex((prev) => (prev === 0 ? menuImages.length - 1 : prev - 1));
+    };
 
     return (
         <>
@@ -138,21 +165,37 @@ export default function Home() {
                 <section className="menu-gallery-row">
                     
                     <div className="menu-card">
-                        <img src={cucas} alt="Cardápio de Cucas" />
+                        <img 
+                            src={cucas} 
+                            alt="Cardápio de Cucas" 
+                            onClick={() => openModal(0)} 
+                            style={{ cursor: 'pointer' }} 
+                        />
                     </div>
 
                     <div className="menu-card">
-                        <img src={paes} alt="Cardápio de Pães" />
-                        </div>
+                        <img 
+                            src={paes} 
+                            alt="Cardápio de Pães" 
+                            onClick={() => openModal(1)} 
+                            style={{ cursor: 'pointer' }} 
+                        />
+                    </div>
                     
-
                     <div className="menu-card">
-                        <img src={bolos} alt="Cardápio de Bolos" />
+                        <img 
+                            src={bolos} 
+                            alt="Cardápio de Bolos" 
+                            onClick={() => openModal(2)} 
+                            style={{ cursor: 'pointer' }} 
+                        />
                     </div>
+
                 </section>
-                <div className="btn-wrapper">
-                            <Button text="Pedir agora" />
-                        </div>
+
+                <div className="single-btn-wrapper">
+                    <Button text="Pedir agora" />
+                </div>
             </section>
 
             <section id="contact" className="container">
@@ -213,6 +256,15 @@ export default function Home() {
                     <p>Feito para resgatar aquela lembrança da infância ©2025</p>
                 </div>
             </footer>
+
+            {/* --- COMPONENTE DO MODAL RENDERIZADO AQUI --- */}
+            <MenuModal 
+                isOpen={isModalOpen} 
+                onClose={closeModal} 
+                onNext={handleNext} 
+                onPrev={handlePrev} 
+                imageSrc={menuImages[currentImageIndex]} 
+            />
         </>
     )
 }
